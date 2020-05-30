@@ -1,0 +1,57 @@
+{% extends "base3.html" %}
+{% load widget_tweaks %}
+{% block title %}Add{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="kanel panel-default" >
+            <div class="panel-heading">
+                <center>
+                    <h6 class="panel-title">Ride details</h6>
+                </center>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="start">Start :</label>
+                                {% render_field form.start class="form-control" placeholder="from" %}
+                                <label for="date">Date:</label>
+                                {% render_field form.date class="form-control" placeholder="Date" %}
+                                <label for="time">Time:</label>
+                                {% render_field form.time class="form-control" placeholder="Time" %}
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="destination">Destination</label>
+                                {% render_field form.destination class="form-control" placeholder="to" %}
+                                <label for="number">Phone</label>
+                                {% render_field form.number class="form-control" placeholder="Whatsapp number" %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <button type="submit" class="btn btn-info">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <center>
+                <div class="row">
+                    <a class="btn btn-success" href="/arides" role="button">Available rides</a>
+                </div>
+            </center>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#datetimepicker1").datetimepicker();
+    });
+</script>
+{% endblock %}

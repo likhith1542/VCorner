@@ -1,0 +1,86 @@
+{% extends "base3.html" %}
+
+{% block title %}Rides{% endblock %}
+
+{% block main %}
+<!-- <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Available Rides</h3>
+            </div>
+            <ul class="list-group">
+                {% for ride in rides %}
+                <li class="list-group-item">
+                    <strong>From:{{ ride.start }}</strong>
+                    <strong>To:{{ ride.destination }}</strong>
+                    <center>
+                        <span>
+                            <p>{{ ride.date }}</p>
+                            <p>{{ ride.time }}</p>
+                            <p>{{ ride.number }}</p>
+                        </span>
+                    </center>
+                </li>
+                {% endfor %}
+            </ul> 
+            
+
+        </div>
+    </div>
+</div> -->
+<!-- {% for ride in rides %}
+{{ forloop.counter }}
+<div class="card" style="width: 18rem;">
+    <img src="/static/rides.jpg" width="180px" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">From: {{ ride.start }}</h5>
+        <h5 class="card-title">From: {{ ride.destination }}</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+{% endfor %} -->
+<div id="clients" class="about-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header text-center">
+                    <h2>Available Rides</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- {% for ride in rides %}
+            <div class="card" style="width: 18rem;">
+                <img src="/static/as.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                        content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            {% endfor %} -->
+            {% for ride in rides %}
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="/static/as.jpeg" alt="...">
+                    <div class="caption">
+                        <h4>From: {{ ride.start }}</h3>
+                        <h4>To&nbsp;&nbsp;: {{ ride.destination }}</h3>
+                        <p>
+                            Date: {{ ride.date }}
+                            Time: {{ ride.time }}
+                        </p>
+                        <p><a href="https://wa.me/{{ ride.number }}" class="btn btn-success" role="button">Whatsapp</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
